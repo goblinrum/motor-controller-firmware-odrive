@@ -9,8 +9,8 @@ PROGRAMMER_CMD=$(if $(value PROGRAMMER),-c 'hla_serial $(PROGRAMMER)',)
 
 include tup.config # source build configuration to get CONFIG_BOARD_VERSION
 
-ifeq ($(shell python -c "import sys; print(sys.version_info.major)"), 3)
-	PY_CMD := python -B
+ifeq ($(shell python3 -c "import sys; print(sys.version_info.major)"), 3)
+	PY_CMD := python3 -B
 else
 	PY_CMD := python3 -B
 endif
